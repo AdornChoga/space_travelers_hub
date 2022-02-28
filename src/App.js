@@ -1,9 +1,11 @@
 import Header from './components/header/Header';
+import Views from './Views/Views';
 
-function App() {
-  return (
+const App = () => (
+  <>
     <Header />
-  );
-}
+    <Views />
+  </>
+);
 
 export default App;
