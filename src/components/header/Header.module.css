@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+}
+
+.logo {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 8%;
+  height: 8%;
+}
+
+.nav_list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+}
