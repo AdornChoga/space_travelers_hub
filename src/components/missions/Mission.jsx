@@ -41,12 +41,22 @@ const Mission = ({ mission }) => {
         }
       </div>
       <div className={classes.mission_join_leave}>
-        <button type="button" onClick={joinMissionHandler}>
-          Join Mission
-        </button>
-        <button type="button" onClick={leaveMissionHandler}>
-          Leave Mission
-        </button>
+        {
+          !mission.reserved
+          && (
+            <button className={classes.btn_join} type="button" onClick={joinMissionHandler}>
+              Join Mission
+            </button>
+          )
+        }
+        {
+          mission.reserved
+          && (
+            <button className={classes.btn_leave} type="button" onClick={leaveMissionHandler}>
+              Leave Mission
+            </button>
+          )
+        }
       </div>
     </li>
   );
