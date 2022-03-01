@@ -10,18 +10,24 @@ const MyMissions = () => {
   return (
     <div className={classes.my_mission_container}>
       <h2 className={classes.my_profile_title}>My Missions</h2>
-      <ul className={classes.my_missions_list}>
-        {
-          myMissions.map((mission) => (
-            <li
-              key={mission.mission_id}
-              className={classes.my_missions_list_item}
-            >
-              {mission.mission_name}
-            </li>
-          ))
-        }
-      </ul>
+      {
+        myMissions.length === 0
+          ? <p className={classes.no_missions_text}>No mission joined yet!</p>
+          : (
+            <ul className={classes.my_missions_list}>
+              {
+                myMissions.map((mission) => (
+                  <li
+                    key={mission.mission_id}
+                    className={classes.my_missions_list_item}
+                  >
+                    {mission.mission_name}
+                  </li>
+                ))
+              }
+            </ul>
+          )
+      }
     </div>
   );
 };

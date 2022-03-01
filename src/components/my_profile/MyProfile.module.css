@@ -12,6 +12,12 @@
   color: #26292e;
 }
 
+.no_missions_text {
+  font-size: 1.6rem;
+  border: 1px solid #d1d1d1;
+  padding: 1.5rem;
+}
+
 .my_missions_list_item {
   padding: 1rem;
   font-size: 1.2rem;
