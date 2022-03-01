@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 
 import classes from './MissionsList.module.css';
-import { joinMission } from '../../redux/missions/missions';
+import { joinMission, leaveMission } from '../../redux/missions/missions';
 
 const Mission = ({ mission }) => {
   const dispatch = useDispatch();
@@ -11,6 +11,11 @@ const Mission = ({ mission }) => {
   const joinMissionHandler = (e) => {
     const { id } = e.target.parentNode.parentNode;
     dispatch(joinMission({ id }));
+  };
+
+  const leaveMissionHandler = (e) => {
+    const { id } = e.target.parentNode.parentNode;
+    dispatch(leaveMission({ id }));
   };
 
   return (
@@ -22,10 +27,26 @@ const Mission = ({ mission }) => {
         {mission.description}
       </div>
       <div className={classes.mission_status}>
-        
+        {
+          !mission.reserved
+          && (
+            <p className={classes.non_member_badge}>Not A Member</p>
+          )
+        }
+        {
+          mission.reserved
+          && (
+            <p className={classes.active_member_badge}>Active Member</p>
+          )
+        }
       </div>
       <div className={classes.mission_join_leave}>
-        
+        <button type="button" onClick={joinMissionHandler}>
+          Join Mission
+        </button>
+        <button type="button" onClick={leaveMissionHandler}>
+          Leave Mission
+        </button>
       </div>
     </li>
   );
