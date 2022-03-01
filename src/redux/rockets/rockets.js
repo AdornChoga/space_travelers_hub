@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const ACTIONS = {
   INITIALIZE: 'rockets/state/initialize',
+  RESERVE: 'rockets/reserve',
 };
 
 const initializeState = () => async (dispatch) => {
@@ -17,14 +18,26 @@ const initializeState = () => async (dispatch) => {
   dispatch({ type: ACTIONS.INITIALIZE, payload: rockets });
 };
 
+const reserveRocket = (id) => ({
+  type: ACTIONS.RESERVE,
+  payload: id,
+});
+
 const rocketsReducer = (state = [], action) => {
   switch (action.type) {
     case ACTIONS.INITIALIZE:
       return action.payload;
+    case ACTIONS.RESERVE:
+      return state.map((rocket) => {
+        if (rocket.id === action.payload) {
+          return { ...rocket, reserved: true };
+        }
+        return rocket;
+      });
     default:
       return state;
   }
 };
 
-export { initializeState };
+export { initializeState, reserveRocket };
 export default rocketsReducer;
