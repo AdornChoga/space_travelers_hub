@@ -1,11 +1,21 @@
+import axios from 'axios';
+
 const ACTIONS = {
   INITIALIZE: 'rockets/state/initialize',
 };
 
-const initializeState = (payload) => ({
-  type: ACTIONS.INITIALIZE,
-  payload,
-});
+const initializeState = () => async (dispatch) => {
+  const { data } = await axios.get('https://api.spacexdata.com/v3/rockets');
+  const rockets = data.map((rocket) => (
+    {
+      id: rocket.id,
+      rocketName: rocket.rocket_name,
+      description: rocket.description,
+      rocketImage: rocket.flickr_images[0],
+    }
+  ));
+  dispatch({ type: ACTIONS.INITIALIZE, payload: rockets });
+};
 
 const rocketsReducer = (state = [], action) => {
   switch (action.type) {
