@@ -1,0 +1,24 @@
+.my_profile_container {
+  padding: 1rem 4rem;
+}
+
+.my_mission_container {
+  padding: 1rem 2rem;
+  width: 45%;
+}
+
+.my_profile_title {
+  font-size: 1.7rem;
+  color: #26292E;
+}
+
+.my_missions_list_item {
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+}
+
+.my_missions_list_item:not(:last-child) {
+  border-bottom: none;
+}
