@@ -1,29 +1,47 @@
-table {
+.missions_list {
   padding: 1rem 2rem;
 }
 
-.table_header_row {
+.missions_list li {
+  display: grid;
+  grid-template-columns: 1.5fr 6.5fr 1fr 1fr;
+  align-items: center;
+  border: 1px solid grey;
+  background-color: #e5e5e5;
+}
+
+.missions_list li:nth-child(even) {
   background-color: #fff;
 }
 
-td {
-  margin: 0;
-  padding: 0.8rem;
-  border: 1px solid grey;
+.missions_list li > * {
+  width: 100%;
+  align-self: stretch;
+  padding: 0.5rem;
 }
 
-.table_header {
+.missions_list li div + div {
+  border-left: 1px solid grey;
+}
+
+.mission_list_header {
+  background-color: #fff;
   text-align: left;
   font-size: 1.6rem;
 }
 
 .mission_name {
-  width: 10%;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .mission_description {
-  width: 70%;
   font-size: 1.3rem;
+}
+
+.mission_join_leave,
+.mission_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
