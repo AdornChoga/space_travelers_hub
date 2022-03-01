@@ -1,18 +1,22 @@
 .my_profile_container {
+  display: flex;
+  flex-wrap: wrap;
   padding: 1rem 4rem;
 }
 
-.my_mission_container {
+.my_mission_container,
+.my_rockets_container {
   padding: 1rem 2rem;
   width: 45%;
 }
 
-.my_profile_title {
+.my_mission_title,
+.my_rockets_title {
   font-size: 1.7rem;
   color: #26292e;
 }
 
-.no_missions_text {
+.no_missions_message {
   font-size: 1.6rem;
   border: 1px solid #d1d1d1;
   padding: 1.5rem;

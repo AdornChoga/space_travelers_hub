@@ -9,10 +9,10 @@ const MyMissions = () => {
 
   return (
     <div className={classes.my_mission_container}>
-      <h2 className={classes.my_profile_title}>My Missions</h2>
+      <h2 className={classes.my_missions_title}>My Missions</h2>
       {
         myMissions.length === 0
-          ? <p className={classes.no_missions_text}>No mission joined yet!</p>
+          ? <p className={classes.no_missions_message}>No mission joined yet!</p>
           : (
             <ul className={classes.my_missions_list}>
               {
