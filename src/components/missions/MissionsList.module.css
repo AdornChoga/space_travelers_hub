@@ -1,0 +1,47 @@
+.missions_list {
+  padding: 1rem 2rem;
+}
+
+.missions_list li {
+  display: grid;
+  grid-template-columns: 1.5fr 6.5fr 1fr 1fr;
+  align-items: center;
+  border: 1px solid grey;
+  background-color: #e5e5e5;
+}
+
+.missions_list li:nth-child(even) {
+  background-color: #fff;
+}
+
+.missions_list li > * {
+  width: 100%;
+  align-self: stretch;
+  padding: 0.5rem;
+}
+
+.missions_list li div + div {
+  border-left: 1px solid grey;
+}
+
+.mission_list_header {
+  background-color: #fff;
+  text-align: left;
+  font-size: 1.6rem;
+}
+
+.mission_name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.mission_description {
+  font-size: 1.3rem;
+}
+
+.mission_join_leave,
+.mission_status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
