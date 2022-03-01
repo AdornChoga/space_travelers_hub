@@ -24,9 +24,12 @@ const Rocket = (props) => {
       </li>
       <li className={classes.rocketDetails}>
         <h3>{ rocketName }</h3>
-        <p>{ description }</p>
-        <button type="button" className={classes.reserve} onClick={handleReserve} id={id}>
-          Reserve Rocket
+        <p>
+          {reserved ? <span className={classes.reservedBadge}>Reserved</span> : ''}
+          { description }
+        </p>
+        <button type="button" className={reserved ? classes.cancel : classes.reserve} onClick={handleReserve} id={id}>
+          {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
         </button>
       </li>
     </ul>
