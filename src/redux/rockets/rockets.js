@@ -2,6 +2,11 @@ const ACTIONS = {
   INITIALIZE: 'rockets/state/initialize',
 };
 
+const initializeState = (payload) => ({
+  type: ACTIONS.INITIALIZE,
+  payload,
+});
+
 const rocketsReducer = (state = [], action) => {
   switch (action.type) {
     case ACTIONS.INITIALIZE:
@@ -11,4 +16,5 @@ const rocketsReducer = (state = [], action) => {
   }
 };
 
+export { initializeState };
 export default rocketsReducer;
