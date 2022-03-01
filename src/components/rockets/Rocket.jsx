@@ -22,7 +22,7 @@ const Rocket = (props) => {
         <h3>{ rocketName }</h3>
         <p>{ description }</p>
         <button type="button" className={classes.reserve} onClick={handleReserve} id={id}>
-        Reserve Rocket
+          Reserve Rocket
         </button>
       </li>
     </ul>
