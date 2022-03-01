@@ -15,10 +15,18 @@ const Mission = ({ mission }) => {
 
   return (
     <li id={mission.mission_id}>
-      <div className={classes.mission_name}>{mission.mission_name}</div>
-      <div className={classes.mission_description}>{mission.description}</div>
-      <div className={classes.mission_status}><p>Not A Member</p></div>
-      <div className={classes.mission_join_leave}><button type="button" onClick={joinMissionHandler}>Join Mission</button></div>
+      <div className={classes.mission_name}>
+        {mission.mission_name}
+      </div>
+      <div className={classes.mission_description}>
+        {mission.description}
+      </div>
+      <div className={classes.mission_status}>
+        
+      </div>
+      <div className={classes.mission_join_leave}>
+        
+      </div>
     </li>
   );
 };

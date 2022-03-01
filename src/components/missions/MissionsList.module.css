@@ -4,7 +4,7 @@
 
 .missions_list li {
   display: grid;
-  grid-template-columns: 1.5fr 6.5fr 1fr 1fr;
+  grid-template-columns: 1.5fr 6fr 1.5fr 1fr;
   align-items: center;
   border: 1px solid grey;
   background-color: #e5e5e5;
@@ -44,4 +44,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.non_member_badge {
+  background-color: #777e87;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.active_member_badge {
+  background-color: #00a2ba;
+  color: #fff;
+  text-transform: capitalize;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.btn_join {
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid #7c8084;
+  color: #72767a;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
+}
+
+.btn_leave {
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid #ec0038;
+  color: #f2456a;
+  padding: 0.7rem;
+  border-radius: 0.4rem;
 }
