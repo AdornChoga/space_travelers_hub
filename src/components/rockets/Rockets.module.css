@@ -18,7 +18,6 @@ ul {
   gap: 2rem;
 }
 
-
 .imageContainer img {
   width: 20rem;
   height: 15rem;
@@ -27,20 +26,19 @@ ul {
 .rocketDetails {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .rocketDetails > * {
-  margin: 0
+  margin: 0;
 }
 
 .reserve {
   width: 13rem;
-  padding: .7rem .2rem;
-  background-color: #007BFF;
+  padding: 0.7rem 0.2rem;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   cursor: pointer;
 }
-
