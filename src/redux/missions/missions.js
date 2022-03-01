@@ -15,9 +15,17 @@ export const fetchMissions = () => async (dispatch) => {
       url: '/missions',
     });
 
+    const missions = response.data.map((mission) => (
+      {
+        mission_id: mission.mission_id,
+        mission_name: mission.mission_name,
+        description: mission.description,
+      }
+    ));
+
     dispatch({
       type: FETCH_SUCCESS,
-      payload: response.data,
+      payload: missions,
     });
   } catch (error) {
     dispatch({
