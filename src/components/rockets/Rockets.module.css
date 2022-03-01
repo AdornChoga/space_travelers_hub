@@ -7,8 +7,8 @@ ul {
   display: flex;
   flex-direction: column;
   padding: 3rem;
-  font-size: 1.5rem;
-  width: 80%;
+  font-size: 1.8rem;
+  width: 98%;
   margin: 0 auto;
   font-family: sans-serif;
 }
@@ -19,14 +19,14 @@ ul {
 }
 
 .imageContainer img {
-  width: 20rem;
-  height: 15rem;
+  width: 28rem;
+  height: 20rem;
 }
 
 .rocketDetails {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: .8rem;
 }
 
 .rocketDetails > * {
@@ -34,11 +34,12 @@ ul {
 }
 
 .reserve {
-  width: 13rem;
-  padding: 0.7rem 0.2rem;
+  width: 18rem;
+  padding: 0.9rem 0.4rem;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 0.3rem;
   cursor: pointer;
+  font-size: 1.8rem;
 }
