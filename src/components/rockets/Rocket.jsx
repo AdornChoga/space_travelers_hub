@@ -2,16 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import classes from './Rockets.module.css';
-import { reserveRocket } from '../../redux/rockets/rockets';
+import { reserveRocket, cancelReservation } from '../../redux/rockets/rockets';
 
 const Rocket = (props) => {
   const dispatch = useDispatch();
   const { rocketInfo } = props;
   const {
-    id, rocketName, description, rocketImage,
+    id, rocketName, description, rocketImage, reserved,
   } = rocketInfo;
   const handleReserve = (e) => {
-    dispatch(reserveRocket(+e.target.id));
+    if (!reserved) {
+      dispatch(reserveRocket(+e.target.id));
+    } else {
+      dispatch(cancelReservation(+e.target.id));
+    }
   };
   return (
     <ul className={classes.rocket}>
@@ -35,6 +39,7 @@ Rocket.propTypes = {
     rocketName: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     rocketImage: PropTypes.string.isRequired,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 

@@ -3,6 +3,7 @@ import axios from 'axios';
 const ACTIONS = {
   INITIALIZE: 'rockets/state/initialize',
   RESERVE: 'rockets/reserve',
+  CANCEL_RESERVATION: 'rockets/cancel_reservation',
 };
 
 const initializeState = () => async (dispatch) => {
@@ -23,6 +24,11 @@ const reserveRocket = (id) => ({
   payload: id,
 });
 
+const cancelReservation = (id) => ({
+  type: ACTIONS.CANCEL_RESERVATION,
+  payload: id,
+});
+
 const rocketsReducer = (state = [], action) => {
   switch (action.type) {
     case ACTIONS.INITIALIZE:
@@ -34,10 +40,17 @@ const rocketsReducer = (state = [], action) => {
         }
         return rocket;
       });
+    case ACTIONS.CANCEL_RESERVATION:
+      return state.map((rocket) => {
+        if (rocket.id === action.payload) {
+          return { ...rocket, reserved: false };
+        }
+        return rocket;
+      });
     default:
       return state;
   }
 };
 
-export { initializeState, reserveRocket };
+export { initializeState, reserveRocket, cancelReservation };
 export default rocketsReducer;
