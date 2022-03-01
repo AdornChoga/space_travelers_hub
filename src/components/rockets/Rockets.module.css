@@ -20,7 +20,7 @@ ul {
 
 
 .imageContainer img {
-  width: 18rem;
+  width: 20rem;
   height: 15rem;
 }
 
@@ -37,7 +37,7 @@ ul {
 .reserve {
   width: 13rem;
   padding: .7rem .2rem;
-  background-color: blue;
+  background-color: #007BFF;
   color: white;
   border: none;
   border-radius: .3rem;
