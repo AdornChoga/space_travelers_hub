@@ -7,7 +7,7 @@ const MyRockets = () => {
   const reservedRockets = rockets.filter((rocket) => rocket.reserved);
   return (
     <div className={classes.my_rockets_container}>
-      <h1 className={classes.my_rockets_title}>My rockets</h1>
+      <h2 className={classes.my_rockets_title}>My rockets</h2>
       { reservedRockets.length === 0 ? (
         <p className={classes.no_missions_message}>No rockets reserved yet!</p>
       ) : (
