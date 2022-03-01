@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import MyMissions from './MyMissions';
 
-const MyProfile = () => {
-  return (
-    <div>MyProfile</div>
-  )
-}
+const MyProfile = () => (
+  <div>
+    <MyMissions />
+  </div>
+);
 
-export default MyProfile
+export default MyProfile;
