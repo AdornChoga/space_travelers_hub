@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import classes from './MyProfile.module.css';
@@ -6,10 +6,6 @@ import classes from './MyProfile.module.css';
 const MyMissions = () => {
   const missions = useSelector((state) => state.missions);
   const myMissions = missions.filter((mission) => mission.reserved);
-
-  useEffect(() => {
-    console.log(myMissions);
-  }, []);
 
   return (
     <div className={classes.my_mission_container}>
