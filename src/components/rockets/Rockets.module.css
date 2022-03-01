@@ -1,0 +1,46 @@
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.rocketsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.rocket {
+  display: flex;
+  gap: 2rem;
+}
+
+
+.imageContainer img {
+  width: 18rem;
+  height: 15rem;
+}
+
+.rocketDetails {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.rocketDetails > * {
+  margin: 0
+}
+
+.reserve {
+  width: 13rem;
+  padding: .7rem .2rem;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: .3rem;
+  cursor: pointer;
+}
+

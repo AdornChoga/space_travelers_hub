@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import Rocket from './Rocket';
+import classes from './Rockets.module.css';
 import { initializeState } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
@@ -9,7 +11,13 @@ const Rockets = () => {
     if (rockets.length === 0) dispatch(initializeState());
   }, []);
   return (
-    <h1>Rockets</h1>
+    <div className={classes.rocketsContainer}>
+      {
+        rockets.map((rocket) => (
+          <Rocket key={rocket.id} rocketInfo={rocket} />
+        ))
+      }
+    </div>
   );
 };
 

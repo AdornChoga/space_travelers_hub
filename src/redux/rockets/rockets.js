@@ -9,9 +9,9 @@ const initializeState = () => async (dispatch) => {
   const rockets = data.map((rocket) => (
     {
       id: rocket.id,
-      rocket_name: rocket.rocket_name,
+      rocketName: rocket.rocket_name,
       description: rocket.description,
-      flickr_images: rocket.flickr_images[0],
+      rocketImage: rocket.flickr_images[0],
     }
   ));
   dispatch({ type: ACTIONS.INITIALIZE, payload: rockets });
