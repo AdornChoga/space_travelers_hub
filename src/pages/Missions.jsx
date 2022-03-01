@@ -1,7 +1,8 @@
 import React from 'react';
+import MissionsList from '../components/missions/MissionsList';
 
 const Missions = () => (
-  <h2>Missions</h2>
+  <MissionsList />
 );
 
 export default Missions;
