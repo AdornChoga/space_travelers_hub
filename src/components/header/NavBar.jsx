@@ -22,7 +22,7 @@ const NavBar = () => {
     },
   ];
   return (
-    <nav className="navbar">
+    <nav>
       <ul className={classes.nav_list}>
         {
           links.map((link) => (

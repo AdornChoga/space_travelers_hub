@@ -15,10 +15,10 @@ const MissionsList = () => {
   return (
     <ul className={classes.missions_list}>
       <li className={`${classes.mission_list_header}`}>
-        <div>Name</div>
-        <div>Description</div>
-        <div>Status</div>
-        <div>Join/Leave</div>
+        <p>Name</p>
+        <p>Description</p>
+        <p>Status</p>
+        <p>Join/Leave</p>
       </li>
       {
         missions.map((mission) => (

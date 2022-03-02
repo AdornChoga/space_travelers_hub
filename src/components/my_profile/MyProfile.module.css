@@ -10,21 +10,23 @@
   width: 45%;
 }
 
-.my_mission_title,
+.my_missions_title,
 .my_rockets_title {
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: #26292e;
 }
 
 .no_missions_message {
   font-size: 1.6rem;
-  border: 1px solid #d1d1d1;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #f68d36;
+  border-radius: 0.6rem;
   padding: 1.5rem;
 }
 
 .my_missions_list_item {
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   border: 1px solid #d1d1d1;
   background-color: #fff;
 }
