@@ -7,7 +7,7 @@ const Header = () => (
   <header>
     <div className={classes.logo}>
       <img src={logo} alt="logo" />
-      <h1>Space Traveler&apos;s Hub</h1>
+      <h1 className={classes.app_title}>Space Traveler&apos;s Hub</h1>
     </div>
     <NavBar />
   </header>

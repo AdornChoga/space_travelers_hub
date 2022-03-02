@@ -23,7 +23,7 @@ const Rocket = (props) => {
         <img src={rocketImage} alt="rocket" />
       </li>
       <li className={classes.rocketDetails}>
-        <h3>{ rocketName }</h3>
+        <h2>{ rocketName }</h2>
         <p>
           {reserved ? <span className={classes.reservedBadge}>Reserved</span> : ''}
           { description }

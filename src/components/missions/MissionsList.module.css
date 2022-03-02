@@ -1,16 +1,16 @@
 .missions_list {
-  padding: 1rem 2rem;
+  padding: 1rem 4.5rem;
 }
 
 .missions_list li {
   display: grid;
-  grid-template-columns: 1.5fr 6fr 1.5fr 1fr;
+  grid-template-columns: 1.4fr 6fr 1.3fr 1.5fr;
   align-items: center;
   border: 1px solid grey;
   background-color: #e5e5e5;
 }
 
-.missions_list li:nth-child(even) {
+.missions_list li:nth-child(odd) {
   background-color: #fff;
 }
 
@@ -20,6 +20,11 @@
   padding: 0.5rem;
 }
 
+.missions_list li p {
+  margin: 0;
+}
+
+.missions_list li p + p,
 .missions_list li div + div {
   border-left: 1px solid grey;
 }
@@ -28,15 +33,18 @@
   background-color: #fff;
   text-align: left;
   font-size: 1.6rem;
+  font-weight: bold;
 }
 
 .mission_name {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
 }
 
 .mission_description {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  word-spacing: 0.3rem;
 }
 
 .mission_join_leave,
@@ -68,18 +76,20 @@
 
 .btn_join {
   background-color: #fff;
+  font-size: 1.8rem;
   cursor: pointer;
   border: 1px solid #7c8084;
   color: #72767a;
-  padding: 0.7rem;
+  padding: 0.9rem 0.7rem;
   border-radius: 0.4rem;
 }
 
 .btn_leave {
   background-color: #fff;
+  font-size: 1.8rem;
   cursor: pointer;
   border: 1px solid #ec0038;
   color: #f2456a;
-  padding: 0.7rem;
+  padding: 0.9rem 0.7rem;
   border-radius: 0.4rem;
 }
