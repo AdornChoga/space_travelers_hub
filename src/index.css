@@ -15,6 +15,10 @@ body {
   background-color: #fafafa;
 }
 
+#root {
+  margin-top: 8rem;
+}
+
 .active {
   text-decoration: underline;
 }

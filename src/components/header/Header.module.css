@@ -2,8 +2,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 1rem 4.5rem;
   border-bottom: 0.1rem solid grey;
+  background-color: #fff;
 }
 
 .logo {
