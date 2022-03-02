@@ -35,13 +35,18 @@
   background-color: #fff;
 }
 
-.my_missions_list_item .btn_leave {
+.btn_leave {
   background-color: #e5e5e5;
   cursor: pointer;
   border: none;
   color: red;
   padding: 0.9rem 0.7rem;
   border-radius: 0.4rem;
+}
+
+.btn_leave:active {
+  transform: scale(0.9);
+  opacity: 0.7;
 }
 
 .my_missions_list_item:not(:last-child) {
