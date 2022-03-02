@@ -1,0 +1,65 @@
+.my_profile_container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 4rem;
+}
+
+.my_mission_container,
+.my_rockets_container {
+  padding: 1rem 2rem;
+  width: 45%;
+}
+
+.my_missions_title,
+.my_rockets_title {
+  font-size: 2rem;
+  color: #26292e;
+}
+
+.no_missions_message {
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #f68d36;
+  border-radius: 0.6rem;
+  padding: 1.5rem;
+}
+
+.my_missions_list_item,
+.my_rockets_list_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.6rem;
+  font-size: 1.5rem;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+}
+
+.btn_leave {
+  background-color: #e5e5e5;
+  cursor: pointer;
+  border: none;
+  color: red;
+  padding: 0.9rem 0.7rem;
+  border-radius: 0.4rem;
+}
+
+.cancel {
+  width: fit-content;
+  padding: 0.7rem;
+  background-color: #e5e5e5;
+  border: none;
+  color: red;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.cancel:active,
+.btn_leave:active {
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+.my_missions_list_item:not(:last-child) {
+  border-bottom: none;
+}

@@ -1,0 +1,24 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #fafafa;
+}
+
+#root {
+  margin-top: 8rem;
+}
+
+.active {
+  text-decoration: underline;
+}
