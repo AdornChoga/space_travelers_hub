@@ -1,11 +1,18 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import classes from './MyProfile.module.css';
+import { leaveMission } from '../../redux/missions/missions';
 
 const MyMissions = () => {
+  const dispatch = useDispatch();
   const missions = useSelector((state) => state.missions);
   const myMissions = missions.filter((mission) => mission.reserved);
+
+  const leaveMissionHandler = (e) => {
+    const { id } = e.target;
+    dispatch(leaveMission({ id }));
+  };
 
   return (
     <div className={classes.my_mission_container}>
@@ -21,7 +28,10 @@ const MyMissions = () => {
                     key={mission.mission_id}
                     className={classes.my_missions_list_item}
                   >
-                    {mission.mission_name}
+                    <p>{mission.mission_name}</p>
+                    <button id={mission.mission_id} className={classes.btn_leave} type="button" onClick={leaveMissionHandler}>
+                      Leave Mission
+                    </button>
                   </li>
                 ))
               }

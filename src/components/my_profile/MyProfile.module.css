@@ -24,11 +24,29 @@
   padding: 1.5rem;
 }
 
-.my_missions_list_item {
-  padding: 1rem;
+.my_missions_list_item,
+.my_rockets_list_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.6rem;
   font-size: 1.5rem;
   border: 1px solid #d1d1d1;
   background-color: #fff;
+}
+
+.btn_leave {
+  background-color: #e5e5e5;
+  cursor: pointer;
+  border: none;
+  color: red;
+  padding: 0.9rem 0.7rem;
+  border-radius: 0.4rem;
+}
+
+.btn_leave:active {
+  transform: scale(0.9);
+  opacity: 0.7;
 }
 
 .my_missions_list_item:not(:last-child) {
