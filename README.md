@@ -22,10 +22,10 @@
 ## Getting Started
 To run this application please follow these steps:
 
-1.Clone the repo onto you local machine
- -to clone click on the green 'Code' button and copy the HTTPS link. Using `git clone ` command clone the repository on your local machine.
-2.Run `npm install` in the terminal.
-3.Run `npm start` to view the website in you default browser or use the Live Server extension in Visual Studio Code.
+1. Clone the repo onto you local machine
+ - to clone click on the green 'Code' button and copy the HTTPS link. Using `git clone ` command clone the repository on your local machine.
+2. Run `npm install` in the terminal.
+3. Run `npm start` to view the website in you default browser or use the Live Server extension in Visual Studio Code.
 
 ## Authors
 
