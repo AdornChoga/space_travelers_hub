@@ -44,6 +44,17 @@
   border-radius: 0.4rem;
 }
 
+.cancel {
+  width: fit-content;
+  padding: 0.7rem;
+  background-color: #e5e5e5;
+  border: none;
+  color: red;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.cancel:active,
 .btn_leave:active {
   transform: scale(0.9);
   opacity: 0.7;
