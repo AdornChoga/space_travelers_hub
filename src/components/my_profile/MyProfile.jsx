@@ -1,14 +1,14 @@
 import React from 'react';
-import MyMissions from './MyMissions';
+import { Container } from 'react-bootstrap';
 
-import classes from './MyProfile.module.css';
+import MyMissions from './MyMissions';
 import MyRockets from './MyRockets';
 
 const MyProfile = () => (
-  <div className={classes.my_profile_container}>
+  <Container className="d-flex">
     <MyMissions />
     <MyRockets />
-  </div>
+  </Container>
 );
 
 export default MyProfile;

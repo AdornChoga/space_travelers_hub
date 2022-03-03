@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Container, Button } from 'react-bootstrap';
 
-import classes from './MyProfile.module.css';
 import { leaveMission } from '../../redux/missions/missions';
 
 const MyMissions = () => {
@@ -15,30 +15,30 @@ const MyMissions = () => {
   };
 
   return (
-    <div className={classes.my_mission_container}>
-      <h2 className={classes.my_missions_title}>My Missions</h2>
+    <Container className="d-flex flex-column">
+      <h2>My Missions</h2>
       {
         myMissions.length === 0
-          ? <p className={classes.no_missions_message}>No mission joined yet!</p>
+          ? <p className="border border-warning p-3 rounded-3">No mission joined yet!</p>
           : (
-            <ul className={classes.my_missions_list}>
+            <ul className="list-group">
               {
                 myMissions.map((mission) => (
                   <li
                     key={mission.mission_id}
-                    className={classes.my_missions_list_item}
+                    className="list-group-item d-flex justify-content-between"
                   >
                     <p>{mission.mission_name}</p>
-                    <button id={mission.mission_id} className={classes.btn_leave} type="button" onClick={leaveMissionHandler}>
+                    <Button variant="secondary" className="opacity-50" id={mission.mission_id} onClick={leaveMissionHandler}>
                       Leave Mission
-                    </button>
+                    </Button>
                   </li>
                 ))
               }
             </ul>
           )
       }
-    </div>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import classes from './MyProfile.module.css';
+import { Container, Button } from 'react-bootstrap';
 import { cancelReservation } from '../../redux/rockets/rockets';
 
 const MyRockets = () => {
@@ -12,25 +12,25 @@ const MyRockets = () => {
     dispatch(cancelReservation(+e.target.id));
   };
   return (
-    <div className={classes.my_rockets_container}>
-      <h2 className={classes.my_rockets_title}>My rockets</h2>
+    <Container className="d-flex flex-column">
+      <h2>My rockets</h2>
       { reservedRockets.length === 0 ? (
-        <p className={classes.no_missions_message}>No rockets reserved yet!</p>
+        <p className="border border-warning p-3 rounded-3">No rocket reserved yet!</p>
       ) : (
-        <ul className={classes.my_rockets_list}>
+        <ul className="list-group">
           {
             reservedRockets.map((rocket) => (
-              <li key={rocket.id} className={classes.my_rockets_list_item}>
+              <li key={rocket.id} className="list-group-item d-flex justify-content-between">
                 <p>{ rocket.rocketName }</p>
-                <button type="button" className={classes.cancel} onClick={handleCancellation} id={rocket.id}>
+                <Button variant="secondary" className="opacity-50" onClick={handleCancellation} id={rocket.id}>
                   Cancel Reservation
-                </button>
+                </Button>
               </li>
             ))
           }
         </ul>
       )}
-    </div>
+    </Container>
   );
 };
 

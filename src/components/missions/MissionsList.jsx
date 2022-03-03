@@ -13,7 +13,7 @@ const MissionsList = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className="pb-4">
       <Row>
         <Col className="border fw-bold">Name</Col>
         <Col className="border fw-bold" md={7}>Description</Col>
