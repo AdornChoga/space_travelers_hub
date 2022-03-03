@@ -22,7 +22,7 @@ const Navigation = () => {
     },
   ];
   return (
-    <Navbar fixed="top" bg="white">
+    <Navbar fixed="top" bg="white" className="border-bottom border-2">
       <Container className="d-flex justify-content-between p-0">
         <Navbar.Brand className="h1 d-flex gap-3 align-items-center fs-2">
           <img

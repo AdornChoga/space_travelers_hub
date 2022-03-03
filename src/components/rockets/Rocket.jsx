@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import classes from './Rockets.module.css';
+import {
+  Card, Row, Col, Button, Badge,
+} from 'react-bootstrap';
 import { reserveRocket, cancelReservation } from '../../redux/rockets/rockets';
 
 const Rocket = (props) => {
@@ -18,21 +20,29 @@ const Rocket = (props) => {
     }
   };
   return (
-    <ul className={classes.rocket}>
-      <li className={classes.imageContainer}>
-        <img src={rocketImage} alt="rocket" />
-      </li>
-      <li className={classes.rocketDetails}>
-        <h2>{ rocketName }</h2>
-        <p>
-          {reserved ? <span className={classes.reservedBadge}>Reserved</span> : ''}
-          { description }
-        </p>
-        <button type="button" className={reserved ? classes.cancel : classes.reserve} onClick={handleReserve} id={id}>
-          {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
-        </button>
-      </li>
-    </ul>
+    <Card className="d-flex border-0">
+      <Row>
+        <Col md={4}>
+          <Card.Img
+            src={rocketImage}
+            alt="rocket"
+            height="auto"
+          />
+        </Col>
+        <Col>
+          <Card.Body className="d-flex flex-column">
+            <Card.Title>{ rocketName }</Card.Title>
+            <Card.Text>
+              {reserved ? <Badge bg="success" className="me-2">Reserved</Badge> : ''}
+              { description }
+            </Card.Text>
+            <Button className="align-self-start" variant={reserved ? 'outline-secondary' : 'primary'} id={id} onClick={handleReserve}>
+              {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+            </Button>
+          </Card.Body>
+        </Col>
+      </Row>
+    </Card>
   );
 };
 
