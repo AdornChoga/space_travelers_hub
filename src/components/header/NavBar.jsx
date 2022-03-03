@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import classes from './Header.module.css';
-
-const NavBar = () => {
+const Navigation = () => {
   const links = [
     {
       id: 1,
@@ -22,20 +22,20 @@ const NavBar = () => {
     },
   ];
   return (
-    <nav>
-      <ul className={classes.nav_list}>
+    <Navbar>
+      <Nav>
         {
           links.map((link) => (
-            <li key={link.id} className={classes.nav_item}>
-              <NavLink to={link.path}>
+            <LinkContainer to={link.path} key={link.id}>
+              <Nav.Link>
                 {link.text}
-              </NavLink>
-            </li>
+              </Nav.Link>
+            </LinkContainer>
           ))
         }
-      </ul>
-    </nav>
+      </Nav>
+    </Navbar>
   );
 };
 
-export default NavBar;
+export default Navigation;

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from './NavBar';
+import Navigation from './NavBar';
 import logo from '../../assets/images/logo.png';
 import classes from './Header.module.css';
 
@@ -9,7 +9,7 @@ const Header = () => (
       <img src={logo} alt="logo" />
       <h1 className={classes.app_title}>Space Traveler&apos;s Hub</h1>
     </div>
-    <NavBar />
+    <Navigation />
   </header>
 );
 
