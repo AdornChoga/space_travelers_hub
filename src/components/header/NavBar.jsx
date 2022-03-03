@@ -1,7 +1,7 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../../assets/images/logo.png';
 
 const Navigation = () => {
   const links = [
@@ -22,18 +22,30 @@ const Navigation = () => {
     },
   ];
   return (
-    <Navbar>
-      <Nav>
-        {
-          links.map((link) => (
-            <LinkContainer to={link.path} key={link.id}>
-              <Nav.Link>
-                {link.text}
-              </Nav.Link>
-            </LinkContainer>
-          ))
-        }
-      </Nav>
+    <Navbar fixed="top" bg="white">
+      <Container className="d-flex justify-content-between p-0">
+        <Navbar.Brand className="h1 d-flex gap-3 align-items-center fs-2">
+          <img
+            src={logo}
+            alt="logo"
+            width="60"
+            height="60"
+            className="d-inline-block align-top"
+          />
+          Space Travelers&apos; Hub
+        </Navbar.Brand>
+        <Nav>
+          {
+            links.map((link) => (
+              <LinkContainer to={link.path} key={link.id}>
+                <Nav.Link>
+                  {link.text}
+                </Nav.Link>
+              </LinkContainer>
+            ))
+          }
+        </Nav>
+      </Container>
     </Navbar>
   );
 };
