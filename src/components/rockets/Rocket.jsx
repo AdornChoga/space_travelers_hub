@@ -33,7 +33,7 @@ const Rocket = (props) => {
           <Card.Body className="d-flex flex-column">
             <Card.Title>{ rocketName }</Card.Title>
             <Card.Text>
-              {reserved ? <Badge bg="success" className="me-2">Reserved</Badge> : ''}
+              {reserved ? <Badge bg="info" className="me-2">Reserved</Badge> : ''}
               { description }
             </Card.Text>
             <Button className="align-self-start" variant={reserved ? 'outline-secondary' : 'primary'} id={id} onClick={handleReserve}>

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchMissions } from '../../redux/missions/missions';
 import Mission from './Mission';
-import classes from './MissionsList.module.css';
 
 const MissionsList = () => {
   const dispatch = useDispatch();
@@ -13,19 +13,19 @@ const MissionsList = () => {
   }, []);
 
   return (
-    <ul className={classes.missions_list}>
-      <li className={`${classes.mission_list_header}`}>
-        <p>Name</p>
-        <p>Description</p>
-        <p>Status</p>
-        <p>Join/Leave</p>
-      </li>
+    <Container>
+      <Row>
+        <Col className="border fw-bold">Name</Col>
+        <Col className="border fw-bold" md={7}>Description</Col>
+        <Col className="border fw-bold">Status</Col>
+        <Col className="border fw-bold">Join/Leave</Col>
+      </Row>
       {
         missions.map((mission) => (
           <Mission key={mission.mission_id} mission={mission} />
         ))
       }
-    </ul>
+    </Container>
   );
 };
 

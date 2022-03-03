@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  Row, Col, Button, Badge,
+} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 
-import classes from './MissionsList.module.css';
 import { joinMission, leaveMission } from '../../redux/missions/missions';
 
 const Mission = ({ mission }) => {
@@ -19,46 +21,46 @@ const Mission = ({ mission }) => {
   };
 
   return (
-    <li id={mission.mission_id}>
-      <div className={classes.mission_name}>
+    <Row id={mission.mission_id}>
+      <Col className="border pt-1 fw-bold">
         {mission.mission_name}
-      </div>
-      <div className={classes.mission_description}>
+      </Col>
+      <Col md={7} className="border py-1">
         {mission.description}
-      </div>
-      <div className={classes.mission_status}>
+      </Col>
+      <Col className="d-flex align-items-center justify-content-center border">
         {
           !mission.reserved
           && (
-            <p className={classes.non_member_badge}>Not A Member</p>
+            <Badge bg="secondary" className="me-2">Not A Member</Badge>
           )
         }
         {
           mission.reserved
           && (
-            <p className={classes.active_member_badge}>Active Member</p>
+            <Badge bg="info" className="me-2">Active Member</Badge>
           )
         }
-      </div>
-      <div className={classes.mission_join_leave}>
+      </Col>
+      <Col className="d-flex align-items-center justify-content-center border">
         {
           !mission.reserved
           && (
-            <button className={classes.btn_join} type="button" onClick={joinMissionHandler}>
+            <Button variant="outline-secondary" onClick={joinMissionHandler}>
               Join Mission
-            </button>
+            </Button>
           )
         }
         {
           mission.reserved
           && (
-            <button className={classes.btn_leave} type="button" onClick={leaveMissionHandler}>
+            <Button variant="outline-danger" onClick={leaveMissionHandler}>
               Leave Mission
-            </button>
+            </Button>
           )
         }
-      </div>
-    </li>
+      </Col>
+    </Row>
   );
 };
 
