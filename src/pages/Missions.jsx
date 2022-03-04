@@ -1,8 +1,16 @@
 import React from 'react';
-import MissionsList from '../components/missions/MissionsList';
+import { useSelector } from 'react-redux';
 
-const Missions = () => (
-  <MissionsList />
-);
+import MissionsList from '../components/missions/MissionsList';
+import Loading from '../components/spinners/Loading';
+
+const Missions = () => {
+  const { loading } = useSelector((state) => state.missions);
+  return (
+    <>
+      { loading ? <Loading /> : <MissionsList />}
+    </>
+  );
+};
 
 export default Missions;

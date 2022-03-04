@@ -6,7 +6,7 @@ import classes from './MissionsList.module.css';
 
 const MissionsList = () => {
   const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missions);
+  const { missions } = useSelector((state) => state.missions);
 
   useEffect(() => {
     if (missions.length === 0) dispatch(fetchMissions());
