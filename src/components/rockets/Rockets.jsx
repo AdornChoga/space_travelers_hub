@@ -5,7 +5,7 @@ import classes from './Rockets.module.css';
 import { initializeState } from '../../redux/rockets/rockets';
 
 const Rockets = () => {
-  const rockets = useSelector((state) => state.rockets);
+  const { rockets } = useSelector((state) => state.rockets);
   const dispatch = useDispatch();
   useEffect(async () => {
     if (rockets.length === 0) dispatch(initializeState());

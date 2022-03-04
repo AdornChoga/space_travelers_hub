@@ -1,12 +1,25 @@
 import axios from 'axios';
 
+const initialState = { loading: false, rockets: [] };
+
 const ACTIONS = {
+  START_LOADING: 'rockets/start loading',
+  STOP_LOADING: 'rockets/stop loading',
   INITIALIZE: 'rockets/state/initialize',
   RESERVE: 'rockets/reserve',
-  CANCEL_RESERVATION: 'rockets/cancel_reservation',
+  CANCEL_RESERVATION: 'rockets/cancel reservation',
 };
 
+const startLoading = () => ({
+  type: ACTIONS.START_LOADING,
+});
+
+const stopLoading = () => ({
+  type: ACTIONS.STOP_LOADING,
+});
+
 const initializeState = () => async (dispatch) => {
+  dispatch(startLoading());
   const { data } = await axios.get('https://api.spacexdata.com/v3/rockets');
   const rockets = data.map((rocket) => (
     {
@@ -17,6 +30,7 @@ const initializeState = () => async (dispatch) => {
     }
   ));
   dispatch({ type: ACTIONS.INITIALIZE, payload: rockets });
+  dispatch(stopLoading());
 };
 
 const reserveRocket = (id) => ({
@@ -29,24 +43,36 @@ const cancelReservation = (id) => ({
   payload: id,
 });
 
-const rocketsReducer = (state = [], action) => {
+const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
+    case ACTIONS.START_LOADING:
+      return { ...state, loading: true };
+    case ACTIONS.STOP_LOADING:
+      return { ...state, loading: false };
     case ACTIONS.INITIALIZE:
-      return action.payload;
+      return { loading: false, rockets: action.payload };
     case ACTIONS.RESERVE:
-      return state.map((rocket) => {
-        if (rocket.id === action.payload) {
-          return { ...rocket, reserved: true };
-        }
-        return rocket;
-      });
+      return (
+        {
+          loading: false,
+          rockets: state.rockets.map((rocket) => {
+            if (rocket.id === action.payload) {
+              return { ...rocket, reserved: true };
+            }
+            return rocket;
+          }),
+        });
     case ACTIONS.CANCEL_RESERVATION:
-      return state.map((rocket) => {
-        if (rocket.id === action.payload) {
-          return { ...rocket, reserved: false };
-        }
-        return rocket;
-      });
+      return (
+        {
+          loading: false,
+          rockets: state.rockets.map((rocket) => {
+            if (rocket.id === action.payload) {
+              return { ...rocket, reserved: false };
+            }
+            return rocket;
+          }),
+        });
     default:
       return state;
   }
