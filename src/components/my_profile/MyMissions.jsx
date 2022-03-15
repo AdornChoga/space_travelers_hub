@@ -6,7 +6,7 @@ import { leaveMission } from '../../redux/missions/missions';
 
 const MyMissions = () => {
   const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missions);
+  const { missions } = useSelector((state) => state.missions);
   const myMissions = missions.filter((mission) => mission.reserved);
 
   const leaveMissionHandler = (e) => {
