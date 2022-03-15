@@ -1,6 +1,5 @@
 import React from 'react';
 import Spinner from 'react-bootstrap/Spinner';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import classes from './Loading.module.css';
 
